@@ -28,14 +28,43 @@ namespace QuanLyBanHang.View
             f.MdiParent = this;
             f.Show();
         }
+        void HienThiQuanLyKhachHang()
+        {
+            frmKhachHang f = new frmKhachHang();
+            f.MdiParent = this;
+            f.Show();
+        }
         private void frmQuanLyBanHang_Load(object sender, EventArgs e)
         {
             HienThiIntro();
         }
 
-        private void btnThemSanPham_Click(object sender, EventArgs e)
+        private void btnQuanLySanPham_Click(object sender, EventArgs e)
         {
             HienThiQuanLySanPham();
+        }
+
+        private void btnQuanLyKhachHang_Click(object sender, EventArgs e)
+        {
+            HienThiQuanLyKhachHang();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void frmQuanLyBanHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("Bạn có thực sự muốn thoát không?","Thông Báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question)==DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -42,15 +42,15 @@ namespace QuanLyBanHang.Control
             db.ExecuteNonQuery(sqlQuery);
         }
         
-        public void ThemSanPham(string tensp,string nhasanxuat,string loaisanpham,string giaban,string ngaycapnhat,string thongtin)
+        public void ThemSanPham(string nhasanxuat,string loaisanpham,string tensanpham,string giaban,string ngaycapnhat,string thongtin)
         {
-            string sqlQuery = string.Format("Insert Into SanPham Values(N'{0}','{1}','{2}','{3}','{4}',N'{5}')",tensp,loaisanpham, nhasanxuat, giaban,ngaycapnhat,thongtin);
+            string sqlQuery = string.Format("Insert Into SanPham Values('{0}','{1}',N'{2}','{3}','{4}','null',N'{5}')",nhasanxuat,loaisanpham, tensanpham, giaban,ngaycapnhat,thongtin);
             db.ExecuteNonQuery(sqlQuery);
         }
 
-        public void CapNhatSanPham(string tensp, string nhasanxuat, string loaisanpham, string giaban, string ngaycapnhat, string thongtin)
+        public void CapNhatSanPham(string tensp, string nhasanxuat, string loaisanpham, string giaban, string ngaycapnhat, string thongtin,string masanpham)
         {
-            string sqlQuery = string.Format("update SANPHAM set tensanpham = N'{0}',maloai='{1}',mansx='{2}',giaban='{3}',ngaycapnhat='{4}',thongtin=N'{5}'",tensp,loaisanpham,nhasanxuat,giaban,ngaycapnhat,thongtin);
+            string sqlQuery = string.Format("update SANPHAM set tensanpham = N'{0}',maloai='{1}',mansx='{2}',giaban='{3}',ngaycapnhat='{4}',thongtin=N'{5}' where masanpham='{6}'",tensp,loaisanpham,nhasanxuat,giaban,ngaycapnhat,thongtin,masanpham);
             db.ExecuteNonQuery(sqlQuery);
         }
     }

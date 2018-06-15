@@ -55,6 +55,12 @@
     <Compile Include="View\frmIntroduce.Designer.cs">
       <DependentUpon>frmIntroduce.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmKhachHang.Designer.cs">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmQuanLyBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     <EmbeddedResource Include="View\frmIntroduce.resx">
       <DependentUpon>frmIntroduce.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\frmKhachHang.resx">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmQuanLyBanHang.resx">
       <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,5 +108,32 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Assets\Images\HinhSanPham\BanPhimLogitechG213.png" />
+    <Content Include="Assets\Images\HinhSanPham\BanPhimLogitechGpro.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\BanPhimRazerBlackWindow.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\BanPhimRazerXRGB.png" />
+    <Content Include="Assets\Images\HinhSanPham\BanPhimSteelSeriesApex.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\BanPhimSteelSeriesApex150.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\battlefield_4_2013-1366x768.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\battlefield_4_new-1366x768.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\battlefield_4_second_assault-1366x768.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\card-1.png" />
+    <Content Include="Assets\Images\HinhSanPham\ChuotLogitechG102.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\ChuotLogitechG502.png" />
+    <Content Include="Assets\Images\HinhSanPham\ChuotLogitechG903.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\ChuotRazerLancehead.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\ChuotRazerMamba.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\ChuotSteelSeriesRival310.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\ChuotSteelSeriesSensei.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\IMG_0143 %28Edited%29.JPG" />
+    <Content Include="Assets\Images\HinhSanPham\IMG_0146.JPG" />
+    <Content Include="Assets\Images\HinhSanPham\TaiNgheLogitechG231.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\TaiNgheLogitechG233.png" />
+    <Content Include="Assets\Images\HinhSanPham\TaiNgheRazerEKraken7.1.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\TaiNgheRazerElectra.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\TaiNgheSteelSeriesArctis.jpg" />
+    <Content Include="Assets\Images\HinhSanPham\TaiNgheSteelSeriesArctis7.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

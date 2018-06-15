@@ -66,6 +66,7 @@ namespace QuanLyBanHang.View
             btnSua.Enabled = val;
             btnLuu.Enabled=!val;
             btnHuy.Enabled = !val;
+            btnUpLoad.Enabled = !val;
         }
         private void frmSanPham_Load(object sender, EventArgs e)
         {
@@ -103,6 +104,7 @@ namespace QuanLyBanHang.View
                 {
                     sp.XoaSanPham(lsvSanPham.SelectedItems[0].SubItems[0].Text);
                     lsvSanPham.Items.RemoveAt(lsvSanPham.SelectedIndices[0]);
+                    setNull();
                 }
             }
             else
@@ -115,6 +117,7 @@ namespace QuanLyBanHang.View
         {
             themmoi = true;
             setButton(false);
+            setNull();
             txtTenSanPham.Focus();
         }
 
@@ -133,6 +136,33 @@ namespace QuanLyBanHang.View
             else
             {
                 MessageBox.Show("Mời chọn sản phẩm cần sửa!!!");
+            }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            string ngay = string.Format("{0:MM/dd/yyyy}", dtpNgayCapNhat.Value);
+            if(themmoi==true)
+            {
+                sp.ThemSanPham(cbbNhaSanXuat.SelectedValue.ToString(), cbbLoaiSanPham.SelectedValue.ToString(), txtTenSanPham.Text, txtGiaBan.Text, ngay, txtThongTin.Text);
+                MessageBox.Show("Thêm Thành Công!!!","Thông Báo");
+            }
+            else
+            {
+                sp.CapNhatSanPham(txtTenSanPham.Text, cbbNhaSanXuat.SelectedValue.ToString(), cbbLoaiSanPham.SelectedValue.ToString(), txtGiaBan.Text, ngay, txtThongTin.Text,lsvSanPham.SelectedItems[0].SubItems[0].Text);
+                MessageBox.Show("Cập nhật thành công!!!", "Thông Báo");
+            }
+            LayDsSanPham();
+            setNull();
+        }
+
+        private void btnUpLoad_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "JPG FILE|*.jpg|PNG FILE|*.png";
+            if(ofd.ShowDialog()==DialogResult.OK)
+            {
+                
             }
         }
     }
