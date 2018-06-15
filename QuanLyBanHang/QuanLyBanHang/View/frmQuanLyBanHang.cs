@@ -66,5 +66,19 @@ namespace QuanLyBanHang.View
         {
             Close();
         }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            frmThongKe f = new frmThongKe();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            frmBanHang f = new frmBanHang();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }
