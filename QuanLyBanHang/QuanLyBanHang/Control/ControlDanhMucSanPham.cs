@@ -37,15 +37,21 @@ namespace QuanLyBanHang.Control
             return tbNhaSanXuat;
         }
 
+        public DataTable TimKiem(string timkiem)
+        {
+            string sqlQuery = string.Format("select * from DSSanPham where masanpham = '{0}' or tennsx=N'{1}' or tenloai = N'{2}' or tensanpham = N'{3}' ", timkiem, timkiem, timkiem, timkiem);
+            return db.Execute(sqlQuery);
+        }
+
         public void XoaSanPham(String masanpham)
         {
-            string sqlQuery = "Delete from SanPham where masanpham = "+masanpham;
+            string sqlQuery = "Delete from SanPham where masanpham = '"+masanpham+"'";
             db.ExecuteNonQuery(sqlQuery);
         }
         
         public void ThemSanPham(string nhasanxuat,string loaisanpham,string tensanpham,string giamua,string giaban,string slton,string ngaycapnhat,string hinhsanpham,string thongtin)
         {
-            string sqlQuery = string.Format("Insert Into SanPham Values('{0}','{1}',N'{2}','{3}','{4}','{5}','{6}','{7}','{8}')",nhasanxuat,loaisanpham, tensanpham,giamua,giaban,slton,ngaycapnhat,hinhsanpham,thongtin);
+            string sqlQuery = string.Format("Insert Into SanPham Values(' ','{0}','{1}',N'{2}','{3}','{4}','{5}','{6}','{7}',N'{8}')",nhasanxuat,loaisanpham, tensanpham,giamua,giaban,slton,ngaycapnhat,hinhsanpham,thongtin);
             db.ExecuteNonQuery(sqlQuery);
         }
 

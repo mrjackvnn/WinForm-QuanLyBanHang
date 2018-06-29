@@ -32,6 +32,7 @@ namespace QuanLyBanHang.View
         private void frmDanhMucNhaSanXuat_Load(object sender, EventArgs e)
         {
             HienThiNSX();
+            setButton(true);
         }
 
         private void lsvNhaSanXuat_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,6 +52,8 @@ namespace QuanLyBanHang.View
             btnThoat.Enabled = val;
             btnLuu.Enabled = !val;
             btnHuy.Enabled = !val;
+            txtTenNSX.Enabled = !val;
+
         }
 
         void setNull()
@@ -122,12 +125,20 @@ namespace QuanLyBanHang.View
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-
+            setButton(true);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void frmDanhMucNhaSanXuat_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thực sự muốn thoát không???", "Thông Báo!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

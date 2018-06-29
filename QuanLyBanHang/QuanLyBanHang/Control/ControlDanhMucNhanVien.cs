@@ -25,13 +25,13 @@ namespace QuanLyBanHang.Control
 
         public void XoaNhanVien(string manv)
         {
-            string sqlQuery = "Delete from Nhanvien where manv = " + manv;
+            string sqlQuery = "Delete from Nhanvien where manv = '" + manv+"'";
             db.ExecuteNonQuery(sqlQuery);
         }
 
         public void ThemNhanVien(string tennv, string gioitinh, string diachi, string dienthoai, string ngaysinh)
         {
-            string sqlQuery = string.Format("Insert Into Nhanvien Values(N'{0}','{1}',N'{2}','{3}','{4}')", tennv, gioitinh, diachi, dienthoai, ngaysinh);
+            string sqlQuery = string.Format("Insert Into Nhanvien Values('',N'{0}','{1}',N'{2}','{3}','{4}')", tennv, gioitinh, diachi, dienthoai, ngaysinh);
             db.ExecuteNonQuery(sqlQuery);
         }
 

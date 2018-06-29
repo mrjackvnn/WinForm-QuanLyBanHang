@@ -30,11 +30,11 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.grbDanhSach = new System.Windows.Forms.GroupBox();
             this.lsvNhaSanXuat = new System.Windows.Forms.ListView();
@@ -65,11 +65,11 @@
             // 
             // grbChucNang
             // 
+            this.grbChucNang.Controls.Add(this.btnXoa);
             this.grbChucNang.Controls.Add(this.btnThoat);
             this.grbChucNang.Controls.Add(this.btnHuy);
             this.grbChucNang.Controls.Add(this.btnSua);
             this.grbChucNang.Controls.Add(this.btnLuu);
-            this.grbChucNang.Controls.Add(this.btnXoa);
             this.grbChucNang.Controls.Add(this.btnThem);
             this.grbChucNang.Location = new System.Drawing.Point(221, 51);
             this.grbChucNang.Name = "grbChucNang";
@@ -78,8 +78,23 @@
             this.grbChucNang.TabStop = false;
             this.grbChucNang.Text = "Chức năng";
             // 
+            // btnXoa
+            // 
+            this.btnXoa.ForeColor = System.Drawing.Color.Blue;
+            this.btnXoa.Image = global::QuanLyBanHang.Properties.Resources.Remove_16x16;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(75, 19);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(63, 30);
+            this.btnXoa.TabIndex = 6;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // btnThoat
             // 
+            this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.ForeColor = System.Drawing.Color.Blue;
             this.btnThoat.Image = global::QuanLyBanHang.Properties.Resources.Close_16x16;
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,20 +148,6 @@
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.ForeColor = System.Drawing.Color.Blue;
-            this.btnXoa.Image = global::QuanLyBanHang.Properties.Resources.Clear_16x16;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(75, 19);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(63, 30);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -265,10 +266,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(465, 347);
             this.Controls.Add(this.panel1);
             this.Name = "frmDanhMucNhaSanXuat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DANH MỤC NHÀ SẢN XUẤT";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDanhMucNhaSanXuat_FormClosing);
             this.Load += new System.EventHandler(this.frmDanhMucNhaSanXuat_Load);
             this.panel1.ResumeLayout(false);
             this.grbChucNang.ResumeLayout(false);
@@ -287,7 +291,6 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox grbDanhSach;
         private System.Windows.Forms.ListView lsvNhaSanXuat;
@@ -299,5 +302,6 @@
         private System.Windows.Forms.TextBox txtMaNSX;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

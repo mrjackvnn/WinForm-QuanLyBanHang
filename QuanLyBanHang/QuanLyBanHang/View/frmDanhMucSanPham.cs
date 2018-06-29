@@ -22,6 +22,7 @@ namespace QuanLyBanHang.View
         {
             InitializeComponent();
         }
+
         void HienThiDsSanPham()
         {
             DataTable tbSanPham = sp.LayDanhSachSanPham();
@@ -63,7 +64,7 @@ namespace QuanLyBanHang.View
             txtTenFileAnh.Text = "";
             txtGiaMua.Text = "";
             txtGiaBan.Text = "";
-            txtSoLuongTon.Text = "";
+            nudSoLuong.Text = "0";
             txtThongTin.Text = "";
             imgHinhSanPham.ImageLocation = "";
         }
@@ -78,6 +79,14 @@ namespace QuanLyBanHang.View
             btnHuy.Enabled = !val;
             btnUpload.Enabled = !val;
             btnXoaAnh.Enabled = !val;
+            txtTenSanPham.Enabled = !val;
+            dtpNgayCapNhat.Enabled = !val;
+            cbbLoaiSanPham.Enabled = !val;
+            cbbNhaSanXuat.Enabled = !val;
+            txtGiaBan.Enabled = !val;
+            txtGiaMua.Enabled = !val;
+            nudSoLuong.Enabled = !val;
+            txtThongTin.Enabled = !val;
         }
 
         private void frmSanPham_Load(object sender, EventArgs e)
@@ -99,7 +108,7 @@ namespace QuanLyBanHang.View
                 cbbNhaSanXuat.SelectedIndex = cbbNhaSanXuat.FindString(lsvSanPham.SelectedItems[0].SubItems[3].Text);
                 txtGiaMua.Text = lsvSanPham.SelectedItems[0].SubItems[4].Text;
                 txtGiaBan.Text = lsvSanPham.SelectedItems[0].SubItems[5].Text;
-                txtSoLuongTon.Text = lsvSanPham.SelectedItems[0].SubItems[6].Text;
+                nudSoLuong.Text = lsvSanPham.SelectedItems[0].SubItems[6].Text;
                 dtpNgayCapNhat.Value = DateTime.Parse(lsvSanPham.SelectedItems[0].SubItems[7].Text);
                 txtTenFileAnh.Text = lsvSanPham.SelectedItems[0].SubItems[8].Text;
                 txtThongTin.Text = lsvSanPham.SelectedItems[0].SubItems[9].Text;
@@ -139,6 +148,7 @@ namespace QuanLyBanHang.View
             {
                 themmoi = false;
                 setButton(false);
+                txtTenSanPham.Focus();
             }
             else
             {
@@ -151,12 +161,12 @@ namespace QuanLyBanHang.View
             string ngay = string.Format("{0:MM/dd/yyyy}", dtpNgayCapNhat.Value);
             if (themmoi == true)
             {
-                sp.ThemSanPham(cbbNhaSanXuat.SelectedValue.ToString(), cbbLoaiSanPham.SelectedValue.ToString(), txtTenSanPham.Text,txtGiaMua.Text ,txtGiaBan.Text,txtSoLuongTon.Text, ngay, txtTenFileAnh.Text, txtThongTin.Text);
+                sp.ThemSanPham(cbbNhaSanXuat.SelectedValue.ToString(), cbbLoaiSanPham.SelectedValue.ToString(), txtTenSanPham.Text,txtGiaMua.Text ,txtGiaBan.Text,nudSoLuong.Value.ToString(), ngay, txtTenFileAnh.Text, txtThongTin.Text);
                 MessageBox.Show("Thêm Thành Công!!!", "Thông Báo");
             }
             else
             {
-                sp.CapNhatSanPham(txtTenSanPham.Text, cbbNhaSanXuat.SelectedValue.ToString(), cbbLoaiSanPham.SelectedValue.ToString(),txtGiaMua.Text, txtGiaBan.Text,txtSoLuongTon.Text, ngay, txtTenFileAnh.Text, txtThongTin.Text, lsvSanPham.SelectedItems[0].SubItems[0].Text);
+                sp.CapNhatSanPham(txtTenSanPham.Text, cbbNhaSanXuat.SelectedValue.ToString(), cbbLoaiSanPham.SelectedValue.ToString(),txtGiaMua.Text, txtGiaBan.Text,nudSoLuong.Value.ToString(), ngay, txtTenFileAnh.Text, txtThongTin.Text, txtMaSanPham.Text);
                 MessageBox.Show("Cập nhật thành công!!!", "Thông Báo");
             }
             lsvSanPham.Items.Clear();
@@ -189,6 +199,58 @@ namespace QuanLyBanHang.View
         {
             imgHinhSanPham.ImageLocation = "";
             txtTenFileAnh.Text = "";
+        }
+
+        private void txtGiaMua_TextChanged(object sender, EventArgs e)
+        {
+            TextBox txtSoNguyen = (TextBox)sender;
+            if(txtSoNguyen.Text.Length>0)
+            {
+                if(!char.IsDigit(txtSoNguyen.Text[txtSoNguyen.Text.Length - 1]))
+                {
+                    if(MessageBox.Show("Mời nhập số nguyên!!!", "Thông Báo!",MessageBoxButtons.OK,MessageBoxIcon.Error)==DialogResult.OK)
+                    {
+                        txtSoNguyen.Clear();
+                        txtSoNguyen.Focus();
+                    }
+                }
+            }
+        }
+
+        private void frmDanhMucSanPham_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("Bạn có thực sự muốn thoát không???","Thông Báo!",MessageBoxButtons.OKCancel,MessageBoxIcon.Question)==DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if(rbtnMaSP.Checked==true || rbtnLoaiSP.Checked ==true || rbtnNSX.Checked==true ||rbtnTenSP.Checked==true)
+            {
+                sp.TimKiem(txtTimKiem.Text);
+                lsvSanPham.Items.Clear();
+                DataTable tbTimKiem = sp.TimKiem(txtTimKiem.Text);
+                for(int i=0;i<tbTimKiem.Rows.Count;i++)
+                {
+                    ListViewItem lvi = lsvSanPham.Items.Add(tbTimKiem.Rows[0][0].ToString());
+                    lvi.SubItems.Add(tbTimKiem.Rows[i][1].ToString());
+                    lvi.SubItems.Add(tbTimKiem.Rows[i][2].ToString());
+                    lvi.SubItems.Add(tbTimKiem.Rows[i][3].ToString());
+                    lvi.SubItems.Add(tbTimKiem.Rows[i][4].ToString());
+                    lvi.SubItems.Add(tbTimKiem.Rows[i][5].ToString());
+                    lvi.SubItems.Add(tbTimKiem.Rows[i][6].ToString());
+                    lvi.SubItems.Add(tbTimKiem.Rows[i][7].ToString());
+                    lvi.SubItems.Add(tbTimKiem.Rows[i][8].ToString());
+                    lvi.SubItems.Add(tbTimKiem.Rows[i][9].ToString());
+                }
+                if(lsvSanPham.Items.Count==0)
+                {
+                    MessageBox.Show("Không tim thấy!", "Thông Báo!");
+                    txtTimKiem.Focus();
+                }
+            }
         }
     }
 }

@@ -33,5 +33,21 @@ namespace QuanLyBanHang.Model
             sqlCm.ExecuteNonQuery();
             sqlCnn.Close();
         }
+
+        public string LayGiaTriCuaBang(string sqlQuery)
+        {
+            string GiaTri = "";
+            sqlCm = new SqlCommand(sqlQuery, sqlCnn);
+            SqlDataReader sqlRd;
+            sqlCnn.Open();
+            sqlRd = sqlCm.ExecuteReader();
+            while(sqlRd.Read())
+            {
+                GiaTri = sqlRd.GetValue(0).ToString();
+            }
+            sqlRd.Close();
+            sqlCnn.Close();
+            return GiaTri;
+        }
     }
 }

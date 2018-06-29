@@ -24,15 +24,15 @@ namespace QuanLyBanHang.Control
             return tbKhachHang;
         }
 
-        public void XoaKhachHang(String makh)
+        public void XoaKhachHang(string makh)
         {
-            string sqlQuery = "Delete from KHACHHANG where makh = " + makh;
+            string sqlQuery = "Delete from KHACHHANG where makh = '"+makh+"'";
             db.ExecuteNonQuery(sqlQuery);
         }
 
         public void ThemKhachHang(string tenkh, string taikhoan, string matkhau, string dienthoai, string diachi)
         {
-            string sqlQuery = string.Format("Insert Into KhachHang Values(N'{0}','{1}','{2}','{3}',N'{4}')", tenkh, taikhoan,matkhau, dienthoai, diachi);
+            string sqlQuery = string.Format("Insert Into KhachHang Values('',N'{0}','{1}','{2}','{3}',N'{4}')", tenkh, taikhoan,matkhau, dienthoai, diachi);
             db.ExecuteNonQuery(sqlQuery);
         }
 

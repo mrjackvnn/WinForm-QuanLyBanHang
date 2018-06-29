@@ -45,7 +45,6 @@
             this.imgHinhSanPham = new System.Windows.Forms.PictureBox();
             this.txtThongTin = new System.Windows.Forms.RichTextBox();
             this.dtpNgayCapNhat = new System.Windows.Forms.DateTimePicker();
-            this.txtGiaBan = new System.Windows.Forms.TextBox();
             this.cbbNhaSanXuat = new System.Windows.Forms.ComboBox();
             this.cbbLoaiSanPham = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,22 +63,23 @@
             this.rbtnMaSP = new System.Windows.Forms.RadioButton();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.txtGiaBan = new System.Windows.Forms.TextBox();
+            this.txtGiaMua = new System.Windows.Forms.TextBox();
+            this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTenFileAnh = new System.Windows.Forms.TextBox();
             this.txtMaSanPham = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtSoLuongTon = new System.Windows.Forms.TextBox();
-            this.txtGiaMua = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
@@ -90,6 +90,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // lsvSanPham
@@ -122,7 +123,6 @@
             // colMaSP
             // 
             this.colMaSP.Text = "Mã";
-            this.colMaSP.Width = 30;
             // 
             // colTenSP
             // 
@@ -178,7 +178,7 @@
             // btnXoaAnh
             // 
             this.btnXoaAnh.ForeColor = System.Drawing.Color.Blue;
-            this.btnXoaAnh.Image = global::QuanLyBanHang.Properties.Resources.Close_16x16;
+            this.btnXoaAnh.Image = global::QuanLyBanHang.Properties.Resources.RemoveItem_16x16;
             this.btnXoaAnh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoaAnh.Location = new System.Drawing.Point(140, 177);
             this.btnXoaAnh.Name = "btnXoaAnh";
@@ -219,7 +219,7 @@
             this.txtThongTin.Location = new System.Drawing.Point(59, 126);
             this.txtThongTin.Name = "txtThongTin";
             this.txtThongTin.Size = new System.Drawing.Size(349, 81);
-            this.txtThongTin.TabIndex = 13;
+            this.txtThongTin.TabIndex = 5;
             this.txtThongTin.Text = "";
             // 
             // dtpNgayCapNhat
@@ -228,13 +228,6 @@
             this.dtpNgayCapNhat.Name = "dtpNgayCapNhat";
             this.dtpNgayCapNhat.Size = new System.Drawing.Size(223, 20);
             this.dtpNgayCapNhat.TabIndex = 12;
-            // 
-            // txtGiaBan
-            // 
-            this.txtGiaBan.Location = new System.Drawing.Point(197, 103);
-            this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Size = new System.Drawing.Size(79, 20);
-            this.txtGiaBan.TabIndex = 11;
             // 
             // cbbNhaSanXuat
             // 
@@ -255,6 +248,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Blue;
             this.label7.Location = new System.Drawing.Point(4, 126);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 13);
@@ -264,6 +258,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Blue;
             this.label5.Location = new System.Drawing.Point(4, 75);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 13);
@@ -273,7 +268,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(144, 106);
+            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Location = new System.Drawing.Point(144, 103);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 5;
@@ -282,6 +278,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(256, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
@@ -291,6 +288,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Blue;
             this.label2.Location = new System.Drawing.Point(256, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
@@ -307,6 +305,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(4, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
@@ -343,6 +342,7 @@
             // rbtnNSX
             // 
             this.rbtnNSX.AutoSize = true;
+            this.rbtnNSX.ForeColor = System.Drawing.Color.Blue;
             this.rbtnNSX.Location = new System.Drawing.Point(127, 71);
             this.rbtnNSX.Name = "rbtnNSX";
             this.rbtnNSX.Size = new System.Drawing.Size(88, 17);
@@ -354,6 +354,7 @@
             // rbtnLoaiSP
             // 
             this.rbtnLoaiSP.AutoSize = true;
+            this.rbtnLoaiSP.ForeColor = System.Drawing.Color.Blue;
             this.rbtnLoaiSP.Location = new System.Drawing.Point(6, 71);
             this.rbtnLoaiSP.Name = "rbtnLoaiSP";
             this.rbtnLoaiSP.Size = new System.Drawing.Size(94, 17);
@@ -376,10 +377,12 @@
             this.btnTimKiem.Text = "Tìm ";
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // rbtnTenSP
             // 
             this.rbtnTenSP.AutoSize = true;
+            this.rbtnTenSP.ForeColor = System.Drawing.Color.Blue;
             this.rbtnTenSP.Location = new System.Drawing.Point(127, 48);
             this.rbtnTenSP.Name = "rbtnTenSP";
             this.rbtnTenSP.Size = new System.Drawing.Size(93, 17);
@@ -391,6 +394,7 @@
             // rbtnMaSP
             // 
             this.rbtnMaSP.AutoSize = true;
+            this.rbtnMaSP.ForeColor = System.Drawing.Color.Blue;
             this.rbtnMaSP.Location = new System.Drawing.Point(6, 48);
             this.rbtnMaSP.Name = "rbtnMaSP";
             this.rbtnMaSP.Size = new System.Drawing.Size(89, 17);
@@ -408,11 +412,11 @@
             // 
             // grbChucNang
             // 
+            this.grbChucNang.Controls.Add(this.btnXoa);
             this.grbChucNang.Controls.Add(this.btnThoat);
             this.grbChucNang.Controls.Add(this.btnHuy);
             this.grbChucNang.Controls.Add(this.btnSua);
             this.grbChucNang.Controls.Add(this.btnLuu);
-            this.grbChucNang.Controls.Add(this.btnXoa);
             this.grbChucNang.Controls.Add(this.btnThem);
             this.grbChucNang.Location = new System.Drawing.Point(651, 189);
             this.grbChucNang.Name = "grbChucNang";
@@ -421,15 +425,30 @@
             this.grbChucNang.TabStop = false;
             this.grbChucNang.Text = "Chức năng";
             // 
+            // btnXoa
+            // 
+            this.btnXoa.ForeColor = System.Drawing.Color.Blue;
+            this.btnXoa.Image = global::QuanLyBanHang.Properties.Resources.Remove_16x16;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(75, 19);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(63, 30);
+            this.btnXoa.TabIndex = 7;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // btnThoat
             // 
+            this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.ForeColor = System.Drawing.Color.Blue;
             this.btnThoat.Image = global::QuanLyBanHang.Properties.Resources.Close_16x16;
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Location = new System.Drawing.Point(144, 55);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(63, 30);
-            this.btnThoat.TabIndex = 5;
+            this.btnThoat.TabIndex = 11;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -443,7 +462,7 @@
             this.btnHuy.Location = new System.Drawing.Point(75, 55);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(63, 30);
-            this.btnHuy.TabIndex = 4;
+            this.btnHuy.TabIndex = 10;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuy.UseVisualStyleBackColor = true;
@@ -457,7 +476,7 @@
             this.btnSua.Location = new System.Drawing.Point(144, 19);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(63, 30);
-            this.btnSua.TabIndex = 3;
+            this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
@@ -471,25 +490,11 @@
             this.btnLuu.Location = new System.Drawing.Point(6, 55);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(63, 30);
-            this.btnLuu.TabIndex = 2;
+            this.btnLuu.TabIndex = 9;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.ForeColor = System.Drawing.Color.Blue;
-            this.btnXoa.Image = global::QuanLyBanHang.Properties.Resources.Clear_16x16;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(75, 19);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(63, 30);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -501,7 +506,7 @@
             this.btnThem.Location = new System.Drawing.Point(6, 19);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(63, 30);
-            this.btnThem.TabIndex = 0;
+            this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
@@ -530,13 +535,14 @@
             // 
             // panel10
             // 
+            this.panel10.Controls.Add(this.txtGiaBan);
+            this.panel10.Controls.Add(this.txtGiaMua);
+            this.panel10.Controls.Add(this.nudSoLuong);
             this.panel10.Controls.Add(this.label11);
             this.panel10.Controls.Add(this.txtTenFileAnh);
             this.panel10.Controls.Add(this.txtMaSanPham);
             this.panel10.Controls.Add(this.label9);
             this.panel10.Controls.Add(this.label8);
-            this.panel10.Controls.Add(this.txtSoLuongTon);
-            this.panel10.Controls.Add(this.txtGiaMua);
             this.panel10.Controls.Add(this.label6);
             this.panel10.Controls.Add(this.txtThongTin);
             this.panel10.Controls.Add(this.label1);
@@ -546,7 +552,6 @@
             this.panel10.Controls.Add(this.label5);
             this.panel10.Controls.Add(this.cbbNhaSanXuat);
             this.panel10.Controls.Add(this.dtpNgayCapNhat);
-            this.panel10.Controls.Add(this.txtGiaBan);
             this.panel10.Controls.Add(this.label4);
             this.panel10.Controls.Add(this.label3);
             this.panel10.Controls.Add(this.label2);
@@ -555,9 +560,38 @@
             this.panel10.Size = new System.Drawing.Size(418, 210);
             this.panel10.TabIndex = 16;
             // 
+            // txtGiaBan
+            // 
+            this.txtGiaBan.Location = new System.Drawing.Point(197, 100);
+            this.txtGiaBan.Name = "txtGiaBan";
+            this.txtGiaBan.Size = new System.Drawing.Size(79, 20);
+            this.txtGiaBan.TabIndex = 3;
+            this.txtGiaBan.TextChanged += new System.EventHandler(this.txtGiaMua_TextChanged);
+            // 
+            // txtGiaMua
+            // 
+            this.txtGiaMua.Location = new System.Drawing.Point(59, 100);
+            this.txtGiaMua.Name = "txtGiaMua";
+            this.txtGiaMua.Size = new System.Drawing.Size(79, 20);
+            this.txtGiaMua.TabIndex = 2;
+            this.txtGiaMua.TextChanged += new System.EventHandler(this.txtGiaMua_TextChanged);
+            // 
+            // nudSoLuong
+            // 
+            this.nudSoLuong.Location = new System.Drawing.Point(357, 100);
+            this.nudSoLuong.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudSoLuong.Name = "nudSoLuong";
+            this.nudSoLuong.Size = new System.Drawing.Size(57, 20);
+            this.nudSoLuong.TabIndex = 4;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Blue;
             this.label11.Location = new System.Drawing.Point(4, 51);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(81, 13);
@@ -585,6 +619,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Blue;
             this.label9.Location = new System.Drawing.Point(4, 6);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 13);
@@ -594,30 +629,18 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(282, 106);
+            this.label8.ForeColor = System.Drawing.Color.Blue;
+            this.label8.Location = new System.Drawing.Point(282, 103);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 17;
             this.label8.Text = "Số lượng tồn:";
             // 
-            // txtSoLuongTon
-            // 
-            this.txtSoLuongTon.Location = new System.Drawing.Point(358, 103);
-            this.txtSoLuongTon.Name = "txtSoLuongTon";
-            this.txtSoLuongTon.Size = new System.Drawing.Size(50, 20);
-            this.txtSoLuongTon.TabIndex = 16;
-            // 
-            // txtGiaMua
-            // 
-            this.txtGiaMua.Location = new System.Drawing.Point(59, 103);
-            this.txtGiaMua.Name = "txtGiaMua";
-            this.txtGiaMua.Size = new System.Drawing.Size(79, 20);
-            this.txtGiaMua.TabIndex = 15;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 106);
+            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Location = new System.Drawing.Point(4, 103);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 14;
@@ -639,11 +662,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(911, 502);
             this.Controls.Add(this.panel9);
+            this.KeyPreview = true;
             this.Name = "frmDanhMucSanPham";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ SẢN PHẨM";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDanhMucSanPham_FormClosing);
             this.Load += new System.EventHandler(this.frmSanPham_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgHinhSanPham)).EndInit();
@@ -655,6 +681,7 @@
             this.groupBox1.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -673,7 +700,6 @@
         private System.Windows.Forms.PictureBox imgHinhSanPham;
         private System.Windows.Forms.RichTextBox txtThongTin;
         private System.Windows.Forms.DateTimePicker dtpNgayCapNhat;
-        private System.Windows.Forms.TextBox txtGiaBan;
         private System.Windows.Forms.ComboBox cbbNhaSanXuat;
         private System.Windows.Forms.ComboBox cbbLoaiSanPham;
         private System.Windows.Forms.Label label7;
@@ -698,15 +724,12 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoaAnh;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.RadioButton rbtnNSX;
         private System.Windows.Forms.RadioButton rbtnLoaiSP;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtSoLuongTon;
-        private System.Windows.Forms.TextBox txtGiaMua;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ColumnHeader colGiaMua;
         private System.Windows.Forms.ColumnHeader colSoLuongTon;
@@ -714,5 +737,9 @@
         private System.Windows.Forms.TextBox txtTenFileAnh;
         private System.Windows.Forms.TextBox txtMaSanPham;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.NumericUpDown nudSoLuong;
+        private System.Windows.Forms.TextBox txtGiaBan;
+        private System.Windows.Forms.TextBox txtGiaMua;
     }
 }

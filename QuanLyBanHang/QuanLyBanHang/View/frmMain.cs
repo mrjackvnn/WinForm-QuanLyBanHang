@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QuanLyBanHang.View;
 namespace QuanLyBanHang.View
 {
     public partial class frmMain : Form
     {
         public frmMain()
-        {
+        { 
             InitializeComponent();
         }
 
@@ -75,6 +75,17 @@ namespace QuanLyBanHang.View
             frmDanhMucNhanVien f = new frmDanhMucNhanVien();
             f.MdiParent = this;
             f.Show();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            frmHoaDon f = new frmHoaDon();
+            f.Show();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

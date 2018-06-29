@@ -31,13 +31,13 @@ namespace QuanLyBanHang.Control
         
         public void ThemNSX(string tennsx)
         {
-            string sqlQuery = string.Format("Insert into NHASANXUAT values (N'{0}')",tennsx);
+            string sqlQuery = string.Format("Insert into NHASANXUAT values ('',N'{0}')",tennsx);
             db.ExecuteNonQuery(sqlQuery);
         }
 
         public void XoaNSX(string mansx)
         {
-            string sqlQuery = "Delete from NHASANXUAT where mansx = " + mansx;
+            string sqlQuery = "Delete from NHASANXUAT where mansx = '" + mansx+"'";
             db.ExecuteNonQuery(sqlQuery);
         }
 
@@ -51,19 +51,19 @@ namespace QuanLyBanHang.Control
 
         public void ThemLSP(string tenlsp)
         {
-            string sqlQuery = string.Format("Insert into LOAISANPHAM values (N'{0}')", tenlsp);
+            string sqlQuery = string.Format("Insert into LOAISANPHAM values ('',N'{0}')", tenlsp);
             db.ExecuteNonQuery(sqlQuery);
         }
 
         public void XoaLSP(string malsp)
         {
-            string sqlQuery = "Delete from LOAISANPHAM where maloai = " + malsp;
+            string sqlQuery = "Delete from LOAISANPHAM where maloai = '" + malsp+"'";
             db.ExecuteNonQuery(sqlQuery);
         }
 
         public void SuaLSP(string malsp, string tenlsp)
         {
-            string sqlQuery = string.Format("update NHASANXUAT set tennsx=N'{0}' where mansx='{1}'", tenlsp, malsp);
+            string sqlQuery = string.Format("update LOAISANPHAM set tenloai=N'{0}' where maloai='{1}'", tenlsp, malsp);
             db.ExecuteNonQuery(sqlQuery);
         }
     }

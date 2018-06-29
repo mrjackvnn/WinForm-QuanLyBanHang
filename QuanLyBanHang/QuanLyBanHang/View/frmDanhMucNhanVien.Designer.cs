@@ -30,11 +30,11 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.grbDanhSach = new System.Windows.Forms.GroupBox();
             this.lsvNhanVien = new System.Windows.Forms.ListView();
@@ -45,6 +45,9 @@
             this.colDT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colNgaySinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.grbThongTinChung = new System.Windows.Forms.GroupBox();
+            this.rdbNu = new System.Windows.Forms.RadioButton();
+            this.rdbNam = new System.Windows.Forms.RadioButton();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -56,9 +59,6 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.rdbNam = new System.Windows.Forms.RadioButton();
-            this.rdbNu = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.grbChucNang.SuspendLayout();
             this.grbDanhSach.SuspendLayout();
@@ -78,11 +78,11 @@
             // 
             // grbChucNang
             // 
+            this.grbChucNang.Controls.Add(this.btnXoa);
             this.grbChucNang.Controls.Add(this.btnThoat);
             this.grbChucNang.Controls.Add(this.btnHuy);
             this.grbChucNang.Controls.Add(this.btnSua);
             this.grbChucNang.Controls.Add(this.btnLuu);
-            this.grbChucNang.Controls.Add(this.btnXoa);
             this.grbChucNang.Controls.Add(this.btnThem);
             this.grbChucNang.Location = new System.Drawing.Point(451, 51);
             this.grbChucNang.Name = "grbChucNang";
@@ -91,8 +91,23 @@
             this.grbChucNang.TabStop = false;
             this.grbChucNang.Text = "Chức năng";
             // 
+            // btnXoa
+            // 
+            this.btnXoa.ForeColor = System.Drawing.Color.Blue;
+            this.btnXoa.Image = global::QuanLyBanHang.Properties.Resources.Remove_16x16;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(76, 28);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(63, 29);
+            this.btnXoa.TabIndex = 6;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // btnThoat
             // 
+            this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.ForeColor = System.Drawing.Color.Blue;
             this.btnThoat.Image = global::QuanLyBanHang.Properties.Resources.Close_16x16;
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,20 +161,6 @@
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.ForeColor = System.Drawing.Color.Blue;
-            this.btnXoa.Image = global::QuanLyBanHang.Properties.Resources.Clear_16x16;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(76, 27);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(63, 30);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -256,6 +257,35 @@
             this.grbThongTinChung.TabIndex = 1;
             this.grbThongTinChung.TabStop = false;
             this.grbThongTinChung.Text = "Thông tin chung";
+            // 
+            // rdbNu
+            // 
+            this.rdbNu.AutoSize = true;
+            this.rdbNu.Location = new System.Drawing.Point(391, 26);
+            this.rdbNu.Name = "rdbNu";
+            this.rdbNu.Size = new System.Drawing.Size(39, 17);
+            this.rdbNu.TabIndex = 15;
+            this.rdbNu.TabStop = true;
+            this.rdbNu.Text = "Nữ";
+            this.rdbNu.UseVisualStyleBackColor = true;
+            // 
+            // rdbNam
+            // 
+            this.rdbNam.AutoSize = true;
+            this.rdbNam.Location = new System.Drawing.Point(325, 26);
+            this.rdbNam.Name = "rdbNam";
+            this.rdbNam.Size = new System.Drawing.Size(47, 17);
+            this.rdbNam.TabIndex = 14;
+            this.rdbNam.TabStop = true;
+            this.rdbNam.Text = "Nam";
+            this.rdbNam.UseVisualStyleBackColor = true;
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Location = new System.Drawing.Point(325, 52);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(105, 20);
+            this.dtpNgaySinh.TabIndex = 13;
             // 
             // txtDiaChi
             // 
@@ -361,44 +391,18 @@
             this.label1.Text = "Danh Mục Nhân Viên";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.Location = new System.Drawing.Point(325, 52);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(105, 20);
-            this.dtpNgaySinh.TabIndex = 13;
-            // 
-            // rdbNam
-            // 
-            this.rdbNam.AutoSize = true;
-            this.rdbNam.Location = new System.Drawing.Point(325, 26);
-            this.rdbNam.Name = "rdbNam";
-            this.rdbNam.Size = new System.Drawing.Size(47, 17);
-            this.rdbNam.TabIndex = 14;
-            this.rdbNam.TabStop = true;
-            this.rdbNam.Text = "Nam";
-            this.rdbNam.UseVisualStyleBackColor = true;
-            // 
-            // rdbNu
-            // 
-            this.rdbNu.AutoSize = true;
-            this.rdbNu.Location = new System.Drawing.Point(391, 26);
-            this.rdbNu.Name = "rdbNu";
-            this.rdbNu.Size = new System.Drawing.Size(39, 17);
-            this.rdbNu.TabIndex = 15;
-            this.rdbNu.TabStop = true;
-            this.rdbNu.Text = "Nữ";
-            this.rdbNu.UseVisualStyleBackColor = true;
-            // 
             // frmDanhMucNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(696, 373);
             this.Controls.Add(this.panel1);
             this.Name = "frmDanhMucNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DANH MỤC NHÂN VIÊN";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDanhMucNhanVien_FormClosing);
             this.Load += new System.EventHandler(this.frmDanhMucNhanVien_Load);
             this.panel1.ResumeLayout(false);
             this.grbChucNang.ResumeLayout(false);
@@ -417,7 +421,6 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox grbDanhSach;
         private System.Windows.Forms.ListView lsvNhanVien;
@@ -442,5 +445,6 @@
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.RadioButton rdbNu;
         private System.Windows.Forms.RadioButton rdbNam;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

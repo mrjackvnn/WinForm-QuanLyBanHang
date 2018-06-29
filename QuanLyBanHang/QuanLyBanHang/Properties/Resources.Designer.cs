@@ -143,6 +143,16 @@ namespace QuanLyBanHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BOOrder_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("BOOrder_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancel_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Cancel_16x16", resourceCulture);
@@ -573,6 +583,16 @@ namespace QuanLyBanHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ListBox_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("ListBox_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LoadFrom_16x16 {
             get {
                 object obj = ResourceManager.GetObject("LoadFrom_16x16", resourceCulture);
@@ -706,6 +726,16 @@ namespace QuanLyBanHang.Properties {
         internal static System.Drawing.Bitmap OpenHyperlink_32x32 {
             get {
                 object obj = ResourceManager.GetObject("OpenHyperlink_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Print_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Print_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
